@@ -1,0 +1,37 @@
+<div id="<%= dom_id vid %>">
+  <p>
+    <%= vid.user.try(:name) %>
+ poste à 
+    <%= vid.city.try(:name) %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+
+  </p>
+
+  <p>
+    <strong>Device:</strong>
+    <%= vid.device.name %>
+  </p>
+
+  <p>
+    <%= vid.activity.name %>
+  </p>
+
+  <p>
+    <strong>Myvid:</strong>
+    <%= link_to "voir ma vid", voirmavid_vid_path(vid) %>
+  </p>
+
+  <p>
+    <strong>Content:</strong>
+    <%= vid.content %>
+  </p>
+<h2>quelle est la prochaine ville svp</h2>
+<%city=City.new%>
+<%=render "cities/form", city: city%>
+
+
+
+</div>
